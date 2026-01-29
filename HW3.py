@@ -73,7 +73,7 @@ class CouponDispenser:
             numb = self.customer_roster.index(name)
             coupon_index = self.issued_indices[numb]
             coupon = self.coupon_cards[coupon_index]
-            return "That name already has a coupon: {coupon}"
+            return f"That name already has a coupon: {coupon}"
         
         coupon_index = random.randrange(len(self.coupon_cards))
         self.customer_roster.append(name)
@@ -82,15 +82,15 @@ class CouponDispenser:
         
         
         
-        def distribute_session(self):
-            """
-            Run the "coupon dispenser" session.
+    def distribute_session(self):
+        """
+        Run the "coupon dispenser" session.
 
-            The program will loop asking you to enter a customer name (or names), show, or exit.  
-            - If you type exit (exact spelling) the program will print "Goodbye!" and stop.  
-         - If you enter one or more customer names (separated by commas).
-           * A coupon will be picked at random from a list of coupons for each name 
-           if that name doesn't already have an assigned coupon. 
+        The program will loop asking you to enter a customer name (or names), show, or exit.  
+        - If you type exit (exact spelling) the program will print "Goodbye!" and stop.  
+        - If you enter one or more customer names (separated by commas).
+        * A coupon will be picked at random from a list of coupons for each name 
+        if that name doesn't already have an assigned coupon. 
         - If you type show (exact spelling) it will display a string with each customer's name and coupon.
 
         See the instructions for more details.
@@ -101,7 +101,7 @@ class CouponDispenser:
         round_number = 1
 
         while True:
-            user_input = input("Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
+            user_input = input(f"Round {round_number} - Enter a name (or a comma-separated list), or type 'show' or 'exit': ")
 
             if user_input == "exit":
                 print("Goodbye!")
@@ -111,7 +111,7 @@ class CouponDispenser:
                 for i in range(len(self.customer_roster)):
                     name = self.customer_roster[i]
                     coupon = self.coupon_cards[self.issued_indices[i]]
-                    print("{name}: {coupon}")
+                    print(f"{name}: {coupon}")
             else:
                 name_left = user_input.split(",")
                 for x in name_left:
@@ -148,10 +148,10 @@ class CouponDispenser:
             print("Empty")
             return
         
-            for i in range(len(self.coupon_cards)):
-                num = self.issued_indices.count(i)
-                coupon = self.coupon_cards[i]
-                print(f"{coupon} distribution count: {num}.")
+        for i in range(len(self.coupon_cards)):
+            num = self.issued_indices.count(i)
+            coupon = self.coupon_cards[i]
+            print(f"{coupon} distribution count: {num}.")
 
 
 def main():
@@ -169,11 +169,10 @@ def main():
         "Free extra espresso shot",
     ]
 
-    # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
-    pass
+#Uncomment the lines below as you implement each function.
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    box.tally_distribution()
 
 
 # -----------------------
@@ -453,5 +452,5 @@ def test():
 
 if __name__ == "__main__":
     main()
-    # test()
+    test()
 
