@@ -67,15 +67,28 @@ class CouponDispenser:
             str: message as described above
         """
         # TODO: Implement per instructions
-        pass
+        if len(self.coupon_cards) == 0:
+            return "The box is empty."
+        if name in self.customer_roster:
+            numb = self.customer_roster.index(name)
+            coupon_index = self.issued_indices[numb]
+            coupon = self.coupon_cards[coupon_index]
+            return "That name already has a coupon: {coupon}"
+        
+        coupon_index = random.randrange(len(self.coupon_cards))
+        self.customer_roster.append(name)
+        self.issued_indices.append(coupon_index)
+        return self.coupon_cards[coupon_index]
+        
+        
+        
+        def distribute_session(self):
+            """
+            Run the "coupon dispenser" session.
 
-    def distribute_session(self):
-        """
-        Run the "coupon dispenser" session.
-
-        The program will loop asking you to enter a customer name (or names), show, or exit.  
-        - If you type exit (exact spelling) the program will print "Goodbye!" and stop.  
-        - If you enter one or more customer names (separated by commas).
+            The program will loop asking you to enter a customer name (or names), show, or exit.  
+            - If you type exit (exact spelling) the program will print "Goodbye!" and stop.  
+         - If you enter one or more customer names (separated by commas).
            * A coupon will be picked at random from a list of coupons for each name 
            if that name doesn't already have an assigned coupon. 
         - If you type show (exact spelling) it will display a string with each customer's name and coupon.
