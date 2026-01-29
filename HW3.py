@@ -1,12 +1,11 @@
-# Name:
-# Student ID:
-# Email:
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
+# Name: Mark Roman
+# Student ID: 29117134
+# Email: markrom@umich.edu
+# Who or what you worked with on this homework (including generative AI like ChatGPT): Gen AI
 # If you worked with generative AI also add a statement for how you used it.
-# e.g.:
-# Asked ChatGPT hints for debugging and suggesting the general structure of the code
+# e.g.: I used it on a few problems. Primarily at the end because I could not figure out how to pass the last two tests. It told me to get rid of the function definers for the autograder, so I did that. I also used it because I forgot about random functions and how to do that. Lastly, I was confused on distribution_session, and used AI to figure out the last part with the names.
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+#    your Gen AI contract? If not, why? Yes, because I gave a good effort by myself beforehand without the use of GenAI, and I stayed within the rules I set for myself.
 
 import random
 import io
